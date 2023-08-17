@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladitos pal calor en epocas de frio</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="contentBtn">
+        <button id="frutilla">Frutilla</button>
+        <button id="chocolate">Chocolate</button>
+        <button id="vainilla">Vainilla</button>
+    </div>
+
+    <div class="drawContainer">
+        <div class="fatherHeladoxd">
+            <div class="palito">
+                <div class="paletaSabor vainilla"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Todos los derechos reservados Rolling Code </p>
+    </footer>
+
+    <script>
+        let d = document;
+
+        let buttonFrutilla = d.getElementById('frutilla')
+        let buttonChocolate = d.getElementById('chocolate')
+        let buttonVainilla = d.getElementById('vainilla')
+
+        let paletaSabor = d.getElementsByClassName('paletaSabor')[0]
+        let listaClases = paletaSabor.classList
+
+
+        d.addEventListener("click",(e)=>{
+            switch (e.target) {
+                case buttonFrutilla:
+                    console.log('FRUTILLA')
+                    
+                    listaClases.forEach((className) => {
+                        if(className == "paletaSabor"){
+                            return
+                        }else{
+                            paletaSabor.classList.remove(className)
+                        }
+                    })
+                    paletaSabor.classList.add('frutilla')
+                    break;
+                case buttonChocolate:
+                    console.log('chocolate')
+                    listaClases.forEach((className) => {
+                        if(className == "paletaSabor"){
+                            return
+                        }else{
+                            paletaSabor.classList.remove(className)
+                        }
+                    })
+                    paletaSabor.classList.add('chocolate')
+                    break;
+                case buttonVainilla:
+                    console.log('vainilla')
+                    listaClases.forEach((className) => {
+                        if(className == "paletaSabor"){
+                            return
+                        }else{
+                            paletaSabor.classList.remove(className)
+                        }
+                    })
+                    paletaSabor.classList.add('vainilla')
+                    break;
+                default:
+                    alert('APRETA BIEN CHANG@')
+                    break;
+            }
+        })
+    </script>
+</body>
+</html>
